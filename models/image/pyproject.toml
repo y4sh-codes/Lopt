@@ -1,0 +1,22 @@
+[project]
+name = "image"
+version = "0.1.0"
+description = "Requirements for image classification model Virtus" 
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "accelerate>=1.6.0",
+    "datasets>=3.5.0",
+    "evaluate>=0.4.3",
+    "imbalanced-learn>=0.13.0",
+    "ipykernel>=6.29.5",
+    "matplotlib>=3.10.1",
+    "notebook>=7.4.0",
+    "numpy>=2.2.4",
+    "pandas>=2.2.3",
+    "pillow>=11.2.1",
+    "scikit-learn>=1.6.1",
+    "torch>=2.6.0",
+    "torchvision>=0.21.0",
+    "transformers>=4.51.3",
+]
