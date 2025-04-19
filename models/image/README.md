@@ -37,7 +37,7 @@ Feel free to use this dataset in your own project.
 
 ## Model Architecture
 
-- **Base Model:** facebook/deit-base-distilled-patch16-224
+- **Base Model:** [facebook/deit-base-distilled-patch16-224](https://huggingface.co/facebook/deit-base-distilled-patch16-224)
 
 - **Processor:** ViTImageProcessor from transformers
 
@@ -73,7 +73,17 @@ After 2 epochs of fine-tuning, the model achieved:
 
 ### Classification Report
 
+| Class         | Precision | Recall | F1-Score | Support |
+|---------------|-----------|--------|----------|---------|
+| **Real**      | 0.9912    | 0.9928 | 0.9920   | 38,081  |
+| **Fake**      | 0.9928    | 0.9912 | 0.9920   | 38,080  |
+| **Accuracy**  |           |        | 0.9920   | 76,161  |
+| **Macro Avg** | 0.9920    | 0.9920 | 0.9920   | 76,161  |
+| **Weighted Avg** | 0.9920 | 0.9920 | 0.9920   | 76,161  |
+
+
 ### Confusion Matrix
+![output](https://github.com/user-attachments/assets/62b1e0a0-ff7f-420b-8449-a4a39d5c601c)
 
 ## Integration
 
