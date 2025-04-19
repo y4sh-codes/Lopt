@@ -1,4 +1,4 @@
-# Lopt: Deepfake Detection Models
+# Lopt: Deepfake Classification Models
 
 This directory contains the model-specific assets, notebooks, and results for **Lopt**, a deepfake detection system. It includes both image-based and video-based classifiers:
 
