@@ -4,7 +4,6 @@
   <img src="frontend/src/assets/logo.jpg" alt="Logo of lopt" width="300", height="300">
 </p>
 
-<div align="center">
   
 <div align="center">
 
