@@ -24,7 +24,7 @@
   Lopt is a multi-modal deepfake classification framework leveraging transformer-based architectures for high-confidence media authentication. It integrates ViT and TimeSformer models for  classifications, optimized via stratified training, augmentation, and parameter-efficient fine-tuning. Built for real-world robustness, Lopt supports scalable inference through a FastAPI backend and offers a React-powered UI for streamlined interaction. 
     <br />
     <br />
-    <a href="https://www.youtube.com/watch?v=E1AjSHxe5NU&feature=youtu.be">View Demo</a>
+    <a href="https://youtu.be/9IbQkp3FVAs">View Demo</a>
     .
     <a href="https://github.com/Itz-Agasta/lopt/issues">Report Bug</a>
     ·
@@ -40,7 +40,7 @@ Deepfakes are AI-generated media — often hyper-realistic videos or images — 
 > 📉 Implications: Misinformation, digital harassment, political manipulation, identity theft, and erosion of public trust.
 
 ![image](https://github.com/user-attachments/assets/2f2e248e-d211-4d1d-818b-c3882f61eb78)
-*<p align="center">A screenshot comparing a real video of President Barrack Obama with a deepfaked version, Jul. 2019 (Youtube/UC Berkeley/https://youtu.be/51uHNgmnLWI/CC Reuse Allowed)</p>*
+*<p align="center">A screenshot comparing a real video of President Barrack Obama with a deepfaked version, Jul. 2019 [Youtube/UC Berkeley](/https://youtu.be/51uHNgmnLWI/CC)</p>*
 
 As synthetic content becomes increasingly indistinguishable from authentic media, we need machine learning models that can see what humans no longer can.
 
