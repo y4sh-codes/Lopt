@@ -1,10 +1,7 @@
+
+![image](https://github.com/user-attachments/assets/52c0785b-06b8-451f-af6a-0b6520fe13f7)
+
 **<h1 align="center">LOPT: Advanced Deepfake Classification Framework</h1>**
-
-<p align="center">
-  <img src="frontend/src/assets/logo.jpg" alt="Logo of lopt" width="300", height="300">
-</p>
-
-  
 <div align="center">
 
 [![Python](https://img.shields.io/badge/Python-3.12%2B-blue)](https://www.python.org/)
@@ -58,6 +55,12 @@ Lopt is a multimodal deepfake detection framework designed to analyze and classi
 - Clean and reproducible pipelines for training, evaluation, and deployment
 
 - Full-stack implementation for both research and real-world use
+
+
+https://github.com/user-attachments/assets/e41fa811-eb4d-478b-a12f-4e775d59b78b
+
+
+  
 
 ## Project Overview
 
