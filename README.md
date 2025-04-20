@@ -1,5 +1,11 @@
 **<h1 align="center">LOPT: Advanced Deepfake Classification Framework</h1>**
 
+<p align="center">
+  <img src="frontend/src/assets/logo.jpg" alt="Logo of lopt" width="300", height="300">
+</p>
+
+<div align="center">
+  
 <div align="center">
 
 [![Python](https://img.shields.io/badge/Python-3.12%2B-blue)](https://www.python.org/)
