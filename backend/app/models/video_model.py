@@ -4,22 +4,23 @@ import torch.nn.functional as F
 import torch
 import os
 
-MODEL_PATH = "agasta/scarlet"
+CONFIG_PATH = os.path.abspath("app/models/config")
+MODEL_PATH = "agasta/scarlet" # Corrected path
 MAX_SIZE = 50
 
-#Load the model and video extraction pipeline
-model = AutoModelForVideoClassification.from_pretrained(MODEL_PATH) 
-extractor = VideoMAEImageProcessor.from_pretrained("models\config") 
+# Load the model and video extraction pipeline
+model = AutoModelForVideoClassification.from_pretrained(MODEL_PATH)
+extractor = VideoMAEImageProcessor.from_pretrained(CONFIG_PATH)
 model.eval()
 
 
 def scarlet(video_path: str) -> tuple[str, float]:
     """
         Analyzes a video and return label and confidence.
-        
+
         Description:
-            Uses decord library to read the video file and extract 8 evenly spaced 
-            frames form the video. The formed numpy list of the video frames are then 
+            Uses decord library to read the video file and extract 8 evenly spaced
+            frames form the video. The formed numpy list of the video frames are then
             passed to the VideoMAEFeatureExtractor (from the VideoMAE-small model) to
             get inputs to scarlet.
 
@@ -31,7 +32,7 @@ def scarlet(video_path: str) -> tuple[str, float]:
     video_size = os.path.getsize(video_path) / (1024*1024)
     if video_size > MAX_SIZE:
         raise ValueError(f"Video size too large ({video_size:.2f} MB).")
-    
+
     num_frames = 8
     vr = VideoReader(video_path, ctx=cpu(0))  # Load video
     total_frames = len(vr)  # Total number of frames

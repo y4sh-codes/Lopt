@@ -1,5 +1,5 @@
 from fastapi import APIRouter, UploadFile
-from playground import handle_image, handle_video
+from routes.playground import handle_image, handle_video
 import os
 import io
 
@@ -23,12 +23,16 @@ SCARLET_TEST_DATASET = {
 router = APIRouter()
 
 
-async def handel_testing(dataset: str, pos: int):
-        """Loads the required file and returns a UploadFile object"""
-        with open(f"{dataset}/00{pos}.mp4", "rb") as f:
-            content = io.BytesIO(f.read())
-            image = UploadFile(filename=f"test-{pos}.mp4", file=content)
-        return image
+async def handel_testing(dataset: str, pos: int, file_type: str):
+    """Loads the required file and returns an UploadFile object"""
+    extension = ".mp4" if file_type == "video" else ".jpg"  # Adjust the extension based on file type
+    file_path = f"{dataset}/00{pos}{extension}"
+    if not os.path.exists(file_path):
+        raise FileNotFoundError(f"File not found: {file_path}")
+    with open(file_path, "rb") as f:
+        content = io.BytesIO(f.read())
+        file = UploadFile(filename=f"test-{pos}{extension}", file=content)
+    return file
 
 
 @router.post("/")
@@ -42,13 +46,13 @@ async def test(pos: int, type: str):
     """
     types = type.split(" ")
     print(types)
-    if pos > 5 :
+    if pos > 5:
         raise ValueError(f"Value of pos can only be between 0 and 5")
     if type not in ["video real", "image real", "image fake", "video fake"]:
         raise ValueError(f"Value of type can only be 'image real', 'image fake' or 'video real', 'video fake' not {type}")
     if types[0] == "image":
-        image = await handel_testing(VIRTUS_TEST_DATASET[types[1]], pos)
+        image = await handel_testing(VIRTUS_TEST_DATASET[types[1]], pos, "image")
         return await handle_image(image)
     elif types[0] == "video":
-        video = await handel_testing(SCARLET_TEST_DATASET[types[1]], pos)
+        video = await handel_testing(SCARLET_TEST_DATASET[types[1]], pos, "video")
         return await handle_video(video)
